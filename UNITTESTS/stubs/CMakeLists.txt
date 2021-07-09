@@ -4,14 +4,12 @@
 add_library(mbed-stubs-headers INTERFACE)
 add_library(mbed-headers INTERFACE)
 add_library(mbed-headers-base INTERFACE)
-add_library(mbed-headers-connectivity INTERFACE)
 add_library(mbed-headers-events INTERFACE)
 
 target_link_libraries(mbed-headers
     INTERFACE
         mbed-headers-base
         mbed-headers-platform
-        mbed-headers-connectivity
         mbed-headers-drivers
         mbed-headers-hal
         mbed-headers-events
@@ -27,13 +25,6 @@ target_include_directories(mbed-headers-base
         ${mbed-os_SOURCE_DIR}/UNITTESTS/target_h/rtos/include
         ${mbed-os_SOURCE_DIR}/UNITTESTS/target_h/rtos
         ${mbed-os_SOURCE_DIR}/UNITTESTS/target_h/sys
-)
-
-target_include_directories(mbed-headers-connectivity
-    INTERFACE
-        ${mbed-os_SOURCE_DIR}/connectivity
-        ${mbed-os_SOURCE_DIR}/connectivity/FEATURE_BLE/include
-        ${mbed-os_SOURCE_DIR}/connectivity/FEATURE_BLE/include/ble
 )
 
 target_include_directories(mbed-headers-events
